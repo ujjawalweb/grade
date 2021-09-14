@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+
+
+<!-- Latest compiled JavaScript -->
+<style>
+  body {
+  background-color: #EBF3FB;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+.signin-container {
+  border: 1px solid #F6F6F6;
+  background-color: #FFF;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  margin: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+}
+.signin-container::before,
+.signin-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 15px;
+  z-index: -1;
+}
+.signin-container::before {
+  width: 90%;
+  height: 120%;
+  background-color: #4A4AE4aa;
+  top: -10%;
+  left: 20%;
+}
+.signin-container::after {
+  background: linear-gradient(90deg, #F073C8aa 0%, #FF6A95aa 99%);
+  width: 8rem;
+  height: 8rem;
+  left: -5%;
+  bottom: -5%;
+  z-index: -2;
+}
+
+.signin-container .title {
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+}
+
+.form .field {
+  margin: .8rem 0 1rem 0;
+}
+.form label,
+.form input {
+  display: block;
+  width: 100%
+}
+.form label {
+  font-size: .85rem;
+}
+.form input {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  padding: .5rem;
+  border: 1px solid #9D9DC4;
+  border-radius: 5px;
+  outline: none;
+  transition: box-shadow .1s ease-in;
+}
+.form input:focus {
+  box-shadow: 0 3px 7px rgba(0, 0, 0, .1);
+}
+
+.form .btn {
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  padding: .5rem .7rem;
+  border-radius: 25px;
+  border: 2px solid;
+  transition: box-shadow .2s ease-in;
+  margin-top: 1rem;
+}
+.form .btn:hover {
+  box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
+}
+.form .btn.submit {
+  background-color: #4A4AE4;
+  font-weight: 300;
+  color: #FFF;
+  border-color: #4A4AE4;
+}
+.form .btn.forgot {
+  border-color: transparent;
+  background-color: #EBF3FB;
+}
+
+.more {
+  margin-top: 2rem;
+  text-align: center;
+  line-height: 1.2;
+}
+.more p {
+  font-weight: 600;
+  font-size: .9rem;
+}
+.more a {
+  font-size: .75rem;
+  color: #333;
+}
+
+@media screen and (max-width: 330px) {
+  .form .btn {
+    width: 100%;
+    margin-top: .3rem;
+  }
+}
+</style>
+
+</head>
+<body>
+  
+  <div class="signin-container">
+    <h2 class="title">Grade Calulator</h2>
+    <form class="form">
+      <div class="field">
+      
+        <input type="number" id="eng"placeholder="English" required>
+     </div>
+      <div class="field">
+     
+        <input type="number" id="hin" placeholder="Hindi" required>
+      </div>
+
+      <div class="field">
+     
+        <input type="number" id="sc" placeholder="Science" required>
+      </div>
+
+
+      <div class="field">
+     
+        <input type="number" id="mat" placeholder="Maths" required>
+      </div>
+
+      <div class="field">
+     
+        <input type="number" id="ssc" placeholder="Social science" required>
+        
+ 
+      </div>
+
+      <input type="button" class="btn" value="submit" onclick="grade()" >
+     
+    </form>
+  <p class="mt-2" id="ujj"></p>
+  <p class="mt-2" id="perc"></p>
+ </div>
+ 
+ 
+
+
+
+
+<script>
+
+function grade() {
+
+var eng = document.getElementById('eng').value;
+var hin = document.getElementById('hin').value;
+var sc = document.getElementById('sc').value;
+var mat = document.getElementById('mat').value;
+var ssc = document.getElementById('ssc').value;
+
+var total= document.getElementById('ujj');
+
+var perc= document.getElementById('perc');
+ perc.innerHTML="percentage :"+ (total.innerHTML/500) *100;
+
+
+ total.innerHTML= parseFloat(eng) + parseFloat(hin) + parseFloat(sc) + parseFloat(mat) + parseFloat(ssc);
+
+
+
+}
+</script>
+
+</body>
+</html>
